@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - TechMarketing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <!-- Navbar (simplified for login) -->
+    <nav class="navbar" style="background-color: transparent; box-shadow: none;">
+        <div class="container">
+            <a href="index.html" class="logo">Tech<span>Marketing</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link-anime">Home</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="login-wrapper">
+        <div id="login-particles"></div>
+        <div class="login-card glass-panel tilt-element">
+            <div class="login-header">
+                <h2>Welcome Back</h2>
+                <p>Access your dashboard to continue.</p>
+            </div>
+            
+            <form id="login-form">
+                <div class="input-group">
+                    <input type="email" id="email" required autocomplete="off">
+                    <label for="email">Email Address</label>
+                    <div class="input-glow"></div>
+                </div>
+                
+                <div class="input-group">
+                    <input type="password" id="password" required>
+                    <label for="password">Password</label>
+                    <div class="input-glow"></div>
+                </div>
+
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        Remember me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="btn btn-premium btn-login btn-click">Log In</button>
+            </form>
+            
+            <div class="login-footer">
+                <p>Don't have an account? <a href="#">Request Access</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Shapes -->
+    <div class="abstract-shape">
+        <div class="circle circle-1" style="width: 500px; height: 500px; top: -100px; right: -100px;"></div>
+        <div class="circle circle-2" style="width: 400px; height: 400px; bottom: -50px; left: -50px; background: rgba(100, 255, 218, 0.05);"></div>
+    </div>
+
+    <script>
+        // Simple Particle Background for Login
+        const particleContainer = document.getElementById('login-particles');
+        for (let i = 0; i < 30; i++) {
+            let p = document.createElement('div');
+            p.classList.add('particle');
+            p.style.left = Math.random() * 100 + '%';
+            p.style.top = Math.random() * 100 + '%';
+            p.style.setProperty('--tx', (Math.random() - 0.5) * 200 + 'px');
+            p.style.setProperty('--ty', (Math.random() - 0.5) * 200 + 'px');
+            p.style.animationDelay = Math.random() * 5 + 's';
+            particleContainer.appendChild(p);
+        }
+
+        // Vanilla Tilt
+        const card = document.querySelector('.login-card');
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = ((y - centerY) / centerY) * -5;
+            const rotateY = ((x - centerX) / centerX) * 5;
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
+        });
+
+        // Form Submit
+        document.getElementById('login-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = document.querySelector('.btn-login');
+            btn.textContent = "Authenticating...";
+            setTimeout(() => {
+                window.location.href = 'settings.html'; // Mock redirect to settings as a "dashboard"
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

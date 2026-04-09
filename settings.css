@@ -1,0 +1,338 @@
+/* Settings Page Specific Styles */
+body {
+    background-color: var(--bg-dark);
+}
+
+.settings-layout {
+    display: flex;
+    margin-top: 70px; /* offset for scrolled navbar */
+    min-height: calc(100vh - 70px);
+    position: relative;
+    z-index: 2;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 280px;
+    background-color: rgba(17, 34, 64, 0.8);
+    backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 2rem 0;
+    position: fixed;
+    height: calc(100vh - 70px);
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    padding: 0 2rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 1.5rem;
+}
+
+.sidebar-header h3 {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.sidebar-menu li {
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--text-slate);
+    display: flex;
+    align-items: center;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-menu li i {
+    margin-right: 15px;
+    font-style: normal;
+    font-size: 1.1rem;
+}
+
+.sidebar-menu li:hover {
+    background-color: rgba(100, 255, 218, 0.05);
+    color: var(--text-light);
+}
+
+.sidebar-menu li.active {
+    background-color: rgba(100, 255, 218, 0.1);
+    color: var(--accent);
+    border-left-color: var(--accent);
+}
+
+/* Main Content Area */
+.settings-content {
+    flex: 1;
+    margin-left: 280px; /* matches sidebar width */
+    padding: 3rem 4rem;
+    max-width: 1000px;
+}
+
+.settings-section {
+    display: none;
+    opacity: 0;
+}
+
+.settings-section.active-section {
+    display: block;
+    animation: fadeUp 0.4s ease-out forwards;
+}
+
+.settings-section h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-desc {
+    color: var(--text-slate);
+    margin-bottom: 2.5rem;
+    font-size: 0.95rem;
+}
+
+.glass-card {
+    background: rgba(17, 34, 64, 0.4);
+    border: 1px solid rgba(136, 146, 176, 0.1);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+}
+
+/* Profile specific */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.profile-avatar-large {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--bg-soft), var(--accent));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--bg-dark);
+    box-shadow: 0 4px 15px rgba(100, 255, 218, 0.3);
+}
+
+.btn-sm {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.8rem;
+}
+
+/* Forms */
+.settings-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 2rem;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.form-input {
+    background: rgba(10, 25, 47, 0.5);
+    border: 1px solid rgba(136, 146, 176, 0.2);
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    color: var(--text-light);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(100, 255, 218, 0.1);
+}
+
+.form-input[readonly] {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Settings Items */
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.setting-item.column-layout {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.setting-info h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.setting-info p {
+    font-size: 0.85rem;
+    color: var(--text-slate);
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.05);
+    margin: 1rem 0;
+}
+
+/* Toggle Switch */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(136, 146, 176, 0.3);
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--accent);
+    box-shadow: 0 0 10px rgba(100, 255, 218, 0.4);
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+/* Color Picker */
+.color-picker-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.color-option {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--bg);
+    cursor: pointer;
+    position: relative;
+    border: 2px solid transparent;
+    transition: 0.2s;
+}
+
+.color-option:hover {
+    transform: scale(1.1);
+}
+
+.color-option.active {
+    border-color: var(--white);
+    box-shadow: 0 0 10px var(--bg);
+}
+
+/* User Avatar in Nav */
+.user-profile-nav {
+    margin-left: 1.5rem !important;
+}
+
+.avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    color: var(--bg-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.pw-form .form-input {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 1rem;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .settings-layout {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 1rem;
+    }
+    .sidebar-menu {
+        display: flex;
+        overflow-x: auto;
+    }
+    .sidebar-menu li {
+        border-left: none;
+        border-bottom: 2px solid transparent;
+        white-space: nowrap;
+    }
+    .sidebar-menu li.active {
+        border-bottom-color: var(--accent);
+    }
+    .settings-content {
+        margin-left: 0;
+        padding: 2rem;
+    }
+    .form-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}

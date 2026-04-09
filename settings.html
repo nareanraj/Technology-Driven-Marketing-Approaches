@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - TechMarketing</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+
+    <!-- Dashboard Navbar -->
+    <nav class="navbar scrolled">
+        <div class="container">
+            <a href="index.html" class="logo">Tech<span>Marketing</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link-anime">Home</a></li>
+                <!-- We indicate user is logged in -->
+                <li class="user-profile-nav">
+                    <div class="avatar">U</div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="settings-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Settings</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active" data-target="profile">
+                    <i>👤</i> Profile
+                </li>
+                <li data-target="appearance">
+                    <i>🎨</i> Appearance
+                </li>
+                <li data-target="notifications">
+                    <i>🔔</i> Notifications
+                </li>
+                <li data-target="security">
+                    <i>🔒</i> Security
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="settings-content">
+            
+            <!-- Profile Settings -->
+            <section id="profile" class="settings-section active-section">
+                <h2>Profile Settings</h2>
+                <p class="section-desc">Manage your personal information and preferences.</p>
+                
+                <div class="settings-card glass-card">
+                    <div class="profile-header">
+                        <div class="profile-avatar-large">U</div>
+                        <div class="btn btn-outline btn-click btn-sm">Change Image</div>
+                    </div>
+                    
+                    <form class="settings-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input type="text" value="User" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input type="text" value="Account" class="form-input">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" value="user@example.com" class="form-input" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Bio / Company</label>
+                            <textarea class="form-input" rows="3">TechMarketing Client</textarea>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-click save-btn">Save Changes</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Appearance Settings -->
+            <section id="appearance" class="settings-section">
+                <h2>Appearance</h2>
+                <p class="section-desc">Customize how the application looks to you.</p>
+                
+                <div class="settings-card glass-card">
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h4>Dark Mode</h4>
+                            <p>Enable dark mode across the platform for a more relaxed visual experience.</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    
+                    <hr class="divider">
+                    
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h4>3D Tilt Effects</h4>
+                            <p>Enable premium interactive 3D elements on cards and UI components.</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <hr class="divider">
+                    
+                    <div class="setting-item column-layout">
+                        <div class="setting-info">
+                            <h4>Accent Color</h4>
+                            <p>Choose your preferred accent color for highlights and buttons.</p>
+                        </div>
+                        <div class="color-picker-group">
+                            <div class="color-option active" style="--bg: #64FFDA;"></div>
+                            <div class="color-option" style="--bg: #FF64B4;"></div>
+                            <div class="color-option" style="--bg: #6495FF;"></div>
+                            <div class="color-option" style="--bg: #FFD164;"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Notifications Settings -->
+            <section id="notifications" class="settings-section">
+                <h2>Notifications</h2>
+                <p class="section-desc">Control what alerts you receive and how.</p>
+                
+                <div class="settings-card glass-card">
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h4>Email Notifications</h4>
+                            <p>Receive daily summaries of your marketing campaigns.</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <hr class="divider">
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h4>Push Notifications</h4>
+                            <p>Real-time alerts for critical system updates.</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Security Settings -->
+            <section id="security" class="settings-section">
+                <h2>Security</h2>
+                <p class="section-desc">Manage your account security and authorization methods.</p>
+                
+                <div class="settings-card glass-card">
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h4>Two-Factor Authentication</h4>
+                            <p>Add an extra layer of security to your account.</p>
+                        </div>
+                        <button class="btn btn-primary btn-click btn-sm">Enable 2FA</button>
+                    </div>
+                    <hr class="divider">
+                    <div class="setting-item column-layout">
+                        <div class="setting-info">
+                            <h4>Change Password</h4>
+                        </div>
+                        <form class="settings-form pw-form">
+                            <input type="password" placeholder="Current Password" class="form-input">
+                            <input type="password" placeholder="New Password" class="form-input">
+                            <input type="password" placeholder="Confirm New Password" class="form-input">
+                            <button type="button" class="btn btn-outline btn-click btn-sm mt-1">Update Password</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Background Abstract shapes for settings too -->
+    <div id="settings-bg" class="abstract-shape">
+        <div class="circle circle-3" style="width: 600px; height: 600px; bottom: -200px; right: -200px; background: rgba(100, 255, 218, 0.03);"></div>
+    </div>
+
+    <script>
+        // Sidebar Navigation Logic
+        const menuItems = document.querySelectorAll('.sidebar-menu li');
+        const sections = document.querySelectorAll('.settings-section');
+
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // Update active menu state
+                menuItems.forEach(m => m.classList.remove('active'));
+                item.classList.add('active');
+
+                // Show corresponding section
+                const targetId = item.getAttribute('data-target');
+                sections.forEach(sec => {
+                    sec.classList.remove('active-section');
+                    if (sec.id === targetId) {
+                        sec.classList.add('active-section');
+                        // Small entrance animation trigger
+                        sec.style.animation = 'none';
+                        sec.offsetHeight; /* trigger reflow */
+                        sec.style.animation = null; 
+                        sec.style.animation = 'fadeUp 0.4s ease-out forwards';
+                    }
+                });
+            });
+        });
+
+        // Color Picker Logic
+        const colorOptions = document.querySelectorAll('.color-option');
+        colorOptions.forEach(opt => {
+            opt.addEventListener('click', () => {
+                colorOptions.forEach(c => c.classList.remove('active'));
+                opt.classList.add('active');
+                
+                // Update CSS variable root
+                const newColor = opt.style.getPropertyValue('--bg');
+                document.documentElement.style.setProperty('--accent', newColor.trim());
+            });
+        });
+
+        // Save Button Simulation
+        document.querySelectorAll('.save-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const originalText = this.textContent;
+                this.textContent = 'Saving...';
+                setTimeout(() => {
+                    this.textContent = 'Saved!';
+                    this.style.backgroundColor = 'rgba(100, 255, 218, 0.2)';
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                        this.style.backgroundColor = '';
+                    }, 2000);
+                }, 800);
+            });
+        });
+    </script>
+</body>
+</html>

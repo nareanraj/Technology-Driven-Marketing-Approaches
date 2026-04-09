@@ -18,8 +18,8 @@
                 <li><a href="#about" class="nav-link-anime">About</a></li>
                 <li><a href="#technologies" class="nav-link-anime">Technologies</a></li>
                 <li><a href="#applications" class="nav-link-anime">Applications</a></li>
-                <li><a href="#future" class="nav-link-anime">Future Scope</a></li>
-                <li><a href="#contact" class="btn-nav btn-click">Contact</a></li>
+                <li><a href="settings.html" class="nav-link-anime">Settings</a></li>
+                <li><a href="login.html" class="btn-nav btn-click">Login</a></li>
             </ul>
             <div class="menu-toggle">
                 <span></span>
@@ -64,7 +64,17 @@
             </div>
             <div class="about-content">
                 <p>Modern marketing is no longer just about creativity; it's about data, efficiency, and precision. By leveraging cutting-edge technology, brands can connect with audiences at the right time, on the right platform, with the right message.</p>
-                <p>Our approach integrates complex technical solutions with marketing psychology to create seamless customer journeys that drive measurable results.</p>
+                <p>Our approach integrates complex technical solutions with marketing psychology to create seamless customer journeys that drive measurable results. We focus on transforming passive observers into active participants through immersive digital experiences, ensuring every touchpoint adds significant value to the consumer.</p>
+                <div class="about-stats" style="display: flex; justify-content: center; gap: 3rem; margin-top: 2rem;">
+                    <div class="stat-item">
+                        <h3 style="color: var(--accent); font-size: 2.5rem; margin-bottom: 0.5rem;">98%</h3>
+                        <p style="font-size: 0.9rem;">Targeting Precision</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 style="color: var(--accent); font-size: 2.5rem; margin-bottom: 0.5rem;">3x</h3>
+                        <p style="font-size: 0.9rem;">Conversion Lift</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -123,25 +133,25 @@
                 <div class="underline"></div>
             </div>
             <div class="apps-grid">
-                <div class="app-card">
+                <div class="app-card tilt-element">
                     <div class="app-icon">🎯</div>
                     <h3>Personalized Advertising</h3>
-                    <p>Delivering hyper-relevant content to users based on browsing history and preferences.</p>
+                    <p>Delivering hyper-relevant content to users based on browsing history, predictive patterns, and explicit preferences, maximizing ROI on ad spend.</p>
                 </div>
-                <div class="app-card">
+                <div class="app-card tilt-element">
                     <div class="app-icon">👥</div>
                     <h3>Customer Segmentation</h3>
-                    <p>Grouping audiences with precision to tailor communication and improve brand loyalty.</p>
+                    <p>Grouping audiences with precision via machine learning clustering to tailor communication, elevate engagement rates, and establish deeper brand loyalty.</p>
                 </div>
-                <div class="app-card">
+                <div class="app-card tilt-element">
                     <div class="app-icon">📉</div>
                     <h3>Predictive Marketing</h3>
-                    <p>Anticipating market trends and user needs before they happen using historical data.</p>
+                    <p>Anticipating market trends and forecasting user needs accurately before they emerge by analyzing complex historical data models.</p>
                 </div>
-                <div class="app-card">
+                <div class="app-card tilt-element">
                     <div class="app-icon">🤖</div>
                     <h3>Intelligent Chatbots</h3>
-                    <p>Providing instant, human-like assistance to resolve queries and qualify leads 24/7.</p>
+                    <p>Deploying advanced LLM-powered virtual assistants to provide context-aware, instantaneous support and qualify incoming leads effortlessly 24/7.</p>
                 </div>
             </div>
         </div>
@@ -298,6 +308,39 @@
                         top: target.offsetTop - 70, // 70 is the scrolled navbar height
                         behavior: 'smooth'
                     });
+                }
+            });
+        });
+
+        // 3D Tilt Effect for Cards
+        const tiltElements = document.querySelectorAll('.tilt-element, .tech-card');
+        tiltElements.forEach(el => {
+            el.addEventListener('mousemove', e => {
+                const rect = el.getBoundingClientRect();
+                const x = e.clientX - rect.left; // x position within the element.
+                const y = e.clientY - rect.top;  // y position within the element.
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                // Calculate rotation (max 15 deg)
+                const rotateX = ((y - centerY) / centerY) * -15;
+                const rotateY = ((x - centerX) / centerX) * 15;
+                
+                el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                
+                // Update glow effect position if present
+                const techIcon = el.querySelector('.tech-icon, .app-icon');
+                if(techIcon) {
+                    techIcon.style.transform = 'translateZ(30px)';
+                }
+            });
+            
+            el.addEventListener('mouseleave', () => {
+                el.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+                const techIcon = el.querySelector('.tech-icon, .app-icon');
+                if(techIcon) {
+                    techIcon.style.transform = 'translateZ(0px)';
                 }
             });
         });
