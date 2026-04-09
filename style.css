@@ -38,6 +38,16 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+body.page-white-bg {
+    background-color: #ffffff;
+    color: #0f172a;
+    --text-primary: #0f172a;
+    --text-heading: #0f172a;
+    --text-secondary: #475569;
+    --glass-bg: rgba(255, 255, 255, 0.35);
+    --glass-border: rgba(15, 23, 42, 0.08);
+}
+
 h1, h2, h3, h4 {
     font-family: var(--fancy-sans);
     color: var(--text-heading);
@@ -422,6 +432,60 @@ ul {
     transform: translateY(-20px) scale(1.02);
     border-color: var(--accent);
     box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), 0 0 20px var(--accent-glow);
+}
+
+.applications .app-card.luxury-card {
+    background-color: #071a3b;
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+.applications .app-card.luxury-card h3,
+.applications .app-card.luxury-card .app-icon-luxury,
+.applications .app-card.luxury-card .card-stats small {
+    color: #ffffff;
+}
+
+.applications .app-card.luxury-card p {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.applications .app-card.luxury-card .card-stats {
+    border-top-color: rgba(255, 255, 255, 0.1);
+    color: #64ffda;
+}
+
+/* Technologies Section - Dark Blue Cards */
+.technologies .tech-card.luxury-card {
+    background-color: #001a4d;
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.08);
+    padding: 3rem;
+    border-radius: 20px;
+}
+
+.technologies .tech-card.luxury-card h3,
+.technologies .tech-card.luxury-card .tech-icon-luxury {
+    color: #ffffff !important;
+}
+
+.technologies .tech-card.luxury-card p {
+    color: #ffffff !important;
+}
+
+.technologies .tech-card.luxury-card .card-stats small {
+    color: #ffffff !important;
+}
+
+.technologies .tech-card.luxury-card .card-stats {
+    color: #64ffda !important;
+}
+
+.technologies .tech-card.luxury-card:hover {
+    background-color: #002966;
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0, 26, 77, 0.5), 0 0 30px rgba(100, 255, 218, 0.3);
+    border-color: #64ffda;
 }
 
 .tech-icon-luxury {
