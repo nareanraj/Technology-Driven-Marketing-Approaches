@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - TechMarketing</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <meta name="description" content="Securely access the TechMarketing ecosystem.">
+    <title>Secure Access - TechMarketing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="login.css">
 </head>
-<body>
+<body class="premium-bg">
     <!-- Navbar (simplified for login) -->
-    <nav class="navbar" style="background-color: transparent; box-shadow: none;">
+    <nav class="navbar" style="background-color: transparent; border: none;">
         <div class="container">
             <a href="index.html" class="logo">Tech<span>Marketing</span></a>
             <ul class="nav-links">
@@ -23,20 +24,21 @@
         <div id="login-particles"></div>
         <div class="login-card glass-panel tilt-element">
             <div class="login-header">
-                <h2>Welcome Back</h2>
-                <p>Access your dashboard to continue.</p>
+                <p class="accent-text-luxury" style="color: var(--accent) !important; text-align: center; margin-bottom: 0.5rem;">Secure Access</p>
+                <h2 class="text-gradient">Human Intelligence</h2>
+                <p>Verify your presence to enter the marketing ecosystem.</p>
             </div>
             
             <form id="login-form">
                 <div class="input-group">
-                    <input type="email" id="email" required autocomplete="off">
-                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required autocomplete="off" placeholder=" ">
+                    <label for="email">Ecosystem ID (Email)</label>
                     <div class="input-glow"></div>
                 </div>
                 
                 <div class="input-group">
-                    <input type="password" id="password" required>
-                    <label for="password">Password</label>
+                    <input type="password" id="password" required placeholder=" ">
+                    <label for="password">Authentication Key</label>
                     <div class="input-glow"></div>
                 </div>
 
@@ -44,42 +46,35 @@
                     <label class="remember-me">
                         <input type="checkbox">
                         <span class="checkmark"></span>
-                        Remember me
+                        Persist Connection
                     </label>
-                    <a href="#" class="forgot-password">Forgot Password?</a>
+                    <a href="#" class="forgot-password">Lost Key?</a>
                 </div>
 
-                <button type="submit" class="btn btn-premium btn-login btn-click">Log In</button>
+                <button type="submit" class="btn btn-primary btn-login btn-click">Synchronize Session</button>
             </form>
             
             <div class="login-footer">
-                <p>Don't have an account? <a href="register.html">Create Account</a></p>
-
+                <p>Unregistered? <a href="register.html" class="text-gradient">Join the Network</a></p>
             </div>
         </div>
-    </div>
-
-    <!-- Background Shapes -->
-    <div class="abstract-shape">
-        <div class="circle circle-1" style="width: 500px; height: 500px; top: -100px; right: -100px;"></div>
-        <div class="circle circle-2" style="width: 400px; height: 400px; bottom: -50px; left: -50px; background: rgba(100, 255, 218, 0.05);"></div>
     </div>
 
     <script>
         // Simple Particle Background for Login
         const particleContainer = document.getElementById('login-particles');
-        for (let i = 0; i < 30; i++) {
+        for (let i = 0; i < 40; i++) {
             let p = document.createElement('div');
             p.classList.add('particle');
             p.style.left = Math.random() * 100 + '%';
             p.style.top = Math.random() * 100 + '%';
-            p.style.setProperty('--tx', (Math.random() - 0.5) * 200 + 'px');
-            p.style.setProperty('--ty', (Math.random() - 0.5) * 200 + 'px');
-            p.style.animationDelay = Math.random() * 5 + 's';
+            p.style.setProperty('--tx', (Math.random() - 0.5) * 300 + 'px');
+            p.style.setProperty('--ty', (Math.random() - 0.5) * 300 + 'px');
+            p.style.animationDelay = Math.random() * 8 + 's';
             particleContainer.appendChild(p);
         }
 
-        // Vanilla Tilt
+        // Vanilla Tilt Enhanced
         const card = document.querySelector('.login-card');
         card.addEventListener('mousemove', e => {
             const rect = card.getBoundingClientRect();
@@ -87,22 +82,22 @@
             const y = e.clientY - rect.top;
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            const rotateX = ((y - centerY) / centerY) * -5;
-            const rotateY = ((x - centerX) / centerX) * 5;
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            const rotateX = ((y - centerY) / centerY) * -8;
+            const rotateY = ((x - centerX) / centerX) * 8;
+            card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         });
         card.addEventListener('mouseleave', () => {
-            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
+            card.style.transform = `perspective(1200px) rotateX(0deg) rotateY(0deg)`;
         });
 
         // Form Submit
         document.getElementById('login-form').addEventListener('submit', (e) => {
             e.preventDefault();
             const btn = document.querySelector('.btn-login');
-            btn.textContent = "Authenticating...";
+            btn.textContent = "Authenticating Bio-ID...";
             setTimeout(() => {
-                window.location.href = 'settings.html'; // Mock redirect to settings as a "dashboard"
-            }, 1000);
+                window.location.href = 'settings.html';
+            }, 1200);
         });
     </script>
 </body>

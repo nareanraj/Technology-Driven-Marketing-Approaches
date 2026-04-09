@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Settings - TechMarketing</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <title>Ecosystem Settings - TechMarketing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="settings.css">
 </head>
-<body>
+<body class="premium-bg">
 
     <!-- Dashboard Navbar -->
-    <nav class="navbar scrolled">
+    <nav class="navbar scrolled" style="background: rgba(2, 6, 23, 0.8); backdrop-filter: blur(20px);">
         <div class="container">
             <a href="index.html" class="logo">Tech<span>Marketing</span></a>
             <ul class="nav-links">
                 <li><a href="index.html" class="nav-link-anime">Home</a></li>
-                <!-- We indicate user is logged in -->
                 <li class="user-profile-nav">
                     <div class="avatar">U</div>
                 </li>
@@ -29,20 +27,20 @@
         <!-- Sidebar Navigation -->
         <aside class="sidebar">
             <div class="sidebar-header">
-                <h3>Settings</h3>
+                <h3>Control Center</h3>
             </div>
             <ul class="sidebar-menu">
                 <li class="active" data-target="profile">
-                    <i>👤</i> Profile
+                    <i>👤</i> Ecosystem Profile
                 </li>
                 <li data-target="appearance">
-                    <i>🎨</i> Appearance
+                    <i>🎨</i> visual Interface
                 </li>
                 <li data-target="notifications">
-                    <i>🔔</i> Notifications
+                    <i>🔔</i> Signal Updates
                 </li>
                 <li data-target="security">
-                    <i>🔒</i> Security
+                    <i>🔒</i> Protocol Security
                 </li>
             </ul>
         </aside>
@@ -52,49 +50,54 @@
             
             <!-- Profile Settings -->
             <section id="profile" class="settings-section active-section">
-                <h2>Profile Settings</h2>
-                <p class="section-desc">Manage your personal information and preferences.</p>
+                <h2 class="text-gradient">Ecosystem Profile</h2>
+                <p class="section-desc">Configure your identity and professional presence within the algorithmic network.</p>
                 
-                <div class="settings-card glass-card">
+                <div class="glass-card">
                     <div class="profile-header">
                         <div class="profile-avatar-large">U</div>
-                        <div class="btn btn-outline btn-click btn-sm">Change Image</div>
+                        <div class="profile-meta">
+                            <h3 style="margin-bottom: 0.5rem; font-size: 1.8rem;">Unknown Entity</h3>
+                            <button class="btn btn-outline btn-click btn-sm">Update Avatar</button>
+                        </div>
                     </div>
                     
                     <form class="settings-form">
                         <div class="form-row">
                             <div class="form-group">
-                                <label>First Name</label>
+                                <label>Cognomen (First)</label>
                                 <input type="text" value="User" class="form-input">
                             </div>
                             <div class="form-group">
-                                <label>Last Name</label>
+                                <label>Patronymic (Last)</label>
                                 <input type="text" value="Account" class="form-input">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label>Email Address</label>
-                            <input type="email" value="user@example.com" class="form-input" readonly>
+                            <label>Communication Link (Email)</label>
+                            <input type="email" value="user@techmarketing.io" class="form-input" readonly>
                         </div>
                         <div class="form-group">
-                            <label>Bio / Company</label>
-                            <textarea class="form-input" rows="3">TechMarketing Client</textarea>
+                            <label>Network Bio / Professional Ethos</label>
+                            <textarea class="form-input" rows="4">Marketing technologist exploring the intersection of AI and human psychology.</textarea>
                         </div>
-                        <button type="button" class="btn btn-primary btn-click save-btn">Save Changes</button>
+                        <div style="margin-top: 1rem;">
+                            <button type="button" class="btn btn-primary btn-click save-btn">Commit Changes</button>
+                        </div>
                     </form>
                 </div>
             </section>
 
             <!-- Appearance Settings -->
             <section id="appearance" class="settings-section">
-                <h2>Appearance</h2>
-                <p class="section-desc">Customize how the application looks to you.</p>
+                <h2 class="text-gradient">Interface Overlay</h2>
+                <p class="section-desc">Customize the visual layer of your marketing ecosystem experience.</p>
                 
-                <div class="settings-card glass-card">
+                <div class="glass-card">
                     <div class="setting-item">
                         <div class="setting-info">
-                            <h4>Dark Mode</h4>
-                            <p>Enable dark mode across the platform for a more relaxed visual experience.</p>
+                            <h4>Nocturnal Protocol (Dark Mode)</h4>
+                            <p>Enable high-contrast, low-light visibility for extended sessions.</p>
                         </div>
                         <label class="toggle-switch">
                             <input type="checkbox" checked>
@@ -106,8 +109,8 @@
                     
                     <div class="setting-item">
                         <div class="setting-info">
-                            <h4>3D Tilt Effects</h4>
-                            <p>Enable premium interactive 3D elements on cards and UI components.</p>
+                            <h4>Inertial Depth (3D Parallax)</h4>
+                            <p>Apply spatial depth and motion to UI components and interactive cards.</p>
                         </div>
                         <label class="toggle-switch">
                             <input type="checkbox" checked>
@@ -119,14 +122,14 @@
                     
                     <div class="setting-item column-layout">
                         <div class="setting-info">
-                            <h4>Accent Color</h4>
-                            <p>Choose your preferred accent color for highlights and buttons.</p>
+                            <h4>Primary Accent Frequencies</h4>
+                            <p>Choose the dominant color spectrum for the ecosystem interface.</p>
                         </div>
                         <div class="color-picker-group">
                             <div class="color-option active" style="--bg: #64FFDA;"></div>
-                            <div class="color-option" style="--bg: #FF64B4;"></div>
-                            <div class="color-option" style="--bg: #6495FF;"></div>
-                            <div class="color-option" style="--bg: #FFD164;"></div>
+                            <div class="color-option" style="--bg: #818cf8;"></div>
+                            <div class="color-option" style="--bg: #fb7185;"></div>
+                            <div class="color-option" style="--bg: #facc15;"></div>
                         </div>
                     </div>
                 </div>
@@ -134,14 +137,14 @@
 
             <!-- Notifications Settings -->
             <section id="notifications" class="settings-section">
-                <h2>Notifications</h2>
-                <p class="section-desc">Control what alerts you receive and how.</p>
+                <h2 class="text-gradient">Signal Feed</h2>
+                <p class="section-desc">Manage how the ecosystem communicates critical intelligence and updates.</p>
                 
-                <div class="settings-card glass-card">
+                <div class="glass-card">
                     <div class="setting-item">
                         <div class="setting-info">
-                            <h4>Email Notifications</h4>
-                            <p>Receive daily summaries of your marketing campaigns.</p>
+                            <h4>Intelligence Digests</h4>
+                            <p>Receive asynchronous summaries of algorithmic campaign performance.</p>
                         </div>
                         <label class="toggle-switch">
                             <input type="checkbox" checked>
@@ -151,8 +154,8 @@
                     <hr class="divider">
                     <div class="setting-item">
                         <div class="setting-info">
-                            <h4>Push Notifications</h4>
-                            <p>Real-time alerts for critical system updates.</p>
+                            <h4>Real-time Telemetry</h4>
+                            <p>Immediate push notifications for significant market shifts or user triggers.</p>
                         </div>
                         <label class="toggle-switch">
                             <input type="checkbox">
@@ -164,27 +167,30 @@
 
             <!-- Security Settings -->
             <section id="security" class="settings-section">
-                <h2>Security</h2>
-                <p class="section-desc">Manage your account security and authorization methods.</p>
+                <h2 class="text-gradient">Protocol Security</h2>
+                <p class="section-desc">Ensure the integrity of your data and authorization channels.</p>
                 
-                <div class="settings-card glass-card">
+                <div class="glass-card">
                     <div class="setting-item">
                         <div class="setting-info">
-                            <h4>Two-Factor Authentication</h4>
-                            <p>Add an extra layer of security to your account.</p>
+                            <h4>Multi-Factor Encryption</h4>
+                            <p>Initialize secondary confirmation protocols for all ecosystem interactions.</p>
                         </div>
-                        <button class="btn btn-primary btn-click btn-sm">Enable 2FA</button>
+                        <button class="btn btn-primary btn-sm">Initialize 2FA</button>
                     </div>
                     <hr class="divider">
-                    <div class="setting-item column-layout">
+                    <div class="setting-item column-layout" style="margin-top: 1.5rem;">
                         <div class="setting-info">
-                            <h4>Change Password</h4>
+                            <h4>Rotate Auth Key (Password)</h4>
+                            <p>Updating your primary access token regularly ensures maximum security.</p>
                         </div>
-                        <form class="settings-form pw-form">
-                            <input type="password" placeholder="Current Password" class="form-input">
-                            <input type="password" placeholder="New Password" class="form-input">
-                            <input type="password" placeholder="Confirm New Password" class="form-input">
-                            <button type="button" class="btn btn-outline btn-click btn-sm mt-1">Update Password</button>
+                        <form class="settings-form" style="width: 100%; max-width: 500px; margin-top: 1.5rem;">
+                            <input type="password" placeholder="Current Secret" class="form-input">
+                            <input type="password" placeholder="New Secret" class="form-input">
+                            <input type="password" placeholder="Verify Secret" class="form-input">
+                            <div style="margin-top: 1rem;">
+                                <button type="button" class="btn btn-outline btn-sm">Execute Update</button>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -193,48 +199,36 @@
         </main>
     </div>
 
-    <!-- Background Abstract shapes for settings too -->
+    <!-- Background Decoration -->
     <div id="settings-bg" class="abstract-shape">
-        <div class="circle circle-3" style="width: 600px; height: 600px; bottom: -200px; right: -200px; background: rgba(100, 255, 218, 0.03);"></div>
+        <div class="circle circle-1" style="width: 800px; height: 800px; bottom: -300px; right: -200px; background: rgba(100, 255, 218, 0.05);"></div>
+        <div class="circle circle-2" style="width: 600px; height: 600px; top: -100px; left: -200px; background: rgba(100, 255, 218, 0.03);"></div>
     </div>
 
     <script>
-        // Sidebar Navigation Logic
+        // JS same as before but adapted for slightly different classes
         const menuItems = document.querySelectorAll('.sidebar-menu li');
         const sections = document.querySelectorAll('.settings-section');
 
         menuItems.forEach(item => {
             item.addEventListener('click', () => {
-                // Update active menu state
                 menuItems.forEach(m => m.classList.remove('active'));
                 item.classList.add('active');
 
-                // Show corresponding section
                 const targetId = item.getAttribute('data-target');
                 sections.forEach(sec => {
                     sec.classList.remove('active-section');
                     if (sec.id === targetId) {
                         sec.classList.add('active-section');
-                        // Small entrance animation trigger
-                        sec.style.animation = 'none';
-                        sec.offsetHeight; /* trigger reflow */
-                        sec.style.animation = null; 
-                        sec.style.animation = 'fadeUp 0.4s ease-out forwards';
+                        sec.style.opacity = '0';
+                        sec.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            sec.style.transition = 'all 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
+                            sec.style.opacity = '1';
+                            sec.style.transform = 'translateY(0)';
+                        }, 50);
                     }
                 });
-            });
-        });
-
-        // Color Picker Logic
-        const colorOptions = document.querySelectorAll('.color-option');
-        colorOptions.forEach(opt => {
-            opt.addEventListener('click', () => {
-                colorOptions.forEach(c => c.classList.remove('active'));
-                opt.classList.add('active');
-                
-                // Update CSS variable root
-                const newColor = opt.style.getPropertyValue('--bg');
-                document.documentElement.style.setProperty('--accent', newColor.trim());
             });
         });
 
@@ -242,15 +236,15 @@
         document.querySelectorAll('.save-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const originalText = this.textContent;
-                this.textContent = 'Saving...';
+                this.textContent = 'Processing...';
                 setTimeout(() => {
-                    this.textContent = 'Saved!';
-                    this.style.backgroundColor = 'rgba(100, 255, 218, 0.2)';
+                    this.textContent = 'Success';
+                    this.style.boxShadow = '0 0 30px var(--accent-glow)';
                     setTimeout(() => {
                         this.textContent = originalText;
-                        this.style.backgroundColor = '';
+                        this.style.boxShadow = '';
                     }, 2000);
-                }, 800);
+                }, 1000);
             });
         });
     </script>

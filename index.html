@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Technology-Driven Marketing Approaches</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- GSAP for Scroll Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
@@ -30,50 +32,52 @@
         </div>
     </nav>
 
-    <!-- Premium Hero Section -->
-    <header class="hero">
-        <div id="hero-canvas-container">
-            <canvas id="hero-particles"></canvas>
+    <!-- Scroll-Scrub Hero Section -->
+    <header class="scroll-hero">
+        <div class="canvas-wrapper">
+            <canvas id="hero-scrub-canvas"></canvas>
+            <div class="overlay-gradient"></div>
         </div>
-        <div class="container hero-content">
-            <div class="hero-text fade-up">
-                <p class="accent-text">The Future of Marketing</p>
-                <h1 class="hero-title">Technology-Driven Marketing Approaches</h1>
-                <p class="subtitle"><span id="typing-text"></span><span class="cursor">|</span></p>
-                <div class="hero-btns">
-                    <a href="#technologies" class="btn btn-primary btn-premium btn-click">Explore More</a>
-                    <a href="#about" class="btn btn-outline btn-click">Learn More</a>
+        
+        <div class="container hero-overlay-content">
+            <div class="hero-text-fixed">
+                <h1 class="hero-title fade-in-up">Precision Marketing<br><span class="text-gradient">Redefined.</span></h1>
+                <p class="subtitle fade-in-up">Leveraging algorithmic excellence to create hyper-personalized consumer experiences that scale.</p>
+                <div class="hero-btns fade-in-up">
+                    <a href="#technologies" class="btn btn-primary btn-premium btn-click">Explore Intelligence</a>
+                    <a href="#about" class="btn btn-outline btn-premium btn-click">Our Philosophy</a>
                 </div>
-            </div>
-            <div class="hero-visual fade-in">
-                <div class="abstract-shape">
-                    <div class="circle circle-1"></div>
-                    <div class="circle circle-2"></div>
-                    <div class="circle circle-3"></div>
-                </div>
-                <img src="assets/hero-bg.png" alt="Technology Marketing Visualization" class="hero-main-img">
             </div>
         </div>
     </header>
 
-    <!-- About Section -->
+    <!-- Luxury About Section (Philosophy) -->
     <section id="about" class="about section-reveal">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Revolutionizing the Industry</h2>
-                <div class="underline"></div>
+                <p class="accent-text-luxury">Our Ethos</p>
+                <h2 class="section-title-luxury">Algorithmic <span class="text-gradient">Integrity.</span></h2>
+                <div class="underline-luxury"></div>
             </div>
             <div class="about-content">
-                <p>Modern marketing is no longer just about creativity; it's about data, efficiency, and precision. By leveraging cutting-edge technology, brands can connect with audiences at the right time, on the right platform, with the right message.</p>
-                <p>Our approach integrates complex technical solutions with marketing psychology to create seamless customer journeys that drive measurable results. We focus on transforming passive observers into active participants through immersive digital experiences, ensuring every touchpoint adds significant value to the consumer.</p>
-                <div class="about-stats" style="display: flex; justify-content: center; gap: 3rem; margin-top: 2rem;">
+                <p class="luxury-lead">In a world saturated with noise, precision is the ultimate luxury. We exist at the intersection of cognitive science and data engineering, crafting experiences that resonate on a biological level.</p>
+                <p style="color: var(--text-secondary) !important;">By integrating deep neural networks with behavioral psychology, we remove the friction from brand-consumer latency. Our frameworks are engineered not just to reach audiences, but to understand them—creating a symbiotic cycle of value that transforms passive observation into active advocacy.</p>
+                <div class="about-stats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-top: 5rem;">
                     <div class="stat-item">
-                        <h3 style="color: var(--accent); font-size: 2.5rem; margin-bottom: 0.5rem;">98%</h3>
-                        <p style="font-size: 0.9rem;">Targeting Precision</p>
+                        <h3 class="luxury-stat-number" style="color: var(--accent) !important;">98</h3>
+                        <p class="luxury-stat-label">Model Accuracy %</p>
                     </div>
                     <div class="stat-item">
-                        <h3 style="color: var(--accent); font-size: 2.5rem; margin-bottom: 0.5rem;">3x</h3>
-                        <p style="font-size: 0.9rem;">Conversion Lift</p>
+                        <h3 class="luxury-stat-number" style="color: var(--accent) !important;">3</h3>
+                        <p class="luxury-stat-label">Conversion Velocity x</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="luxury-stat-number" style="color: var(--accent) !important;">156</h3>
+                        <p class="luxury-stat-label">Global Nodes</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="luxury-stat-number" style="color: var(--accent) !important;">2.4</h3>
+                        <p class="luxury-stat-label">Billion Signals</p>
                     </div>
                 </div>
             </div>
@@ -84,42 +88,46 @@
     <section id="technologies" class="technologies section-reveal">
         <div class="container">
             <div class="section-header">
-                <p class="accent-text">Core Pillars</p>
-                <h2 class="section-title">Technological Foundation</h2>
-                <div class="underline"></div>
+                <p class="accent-text-luxury" style="color: var(--accent) !important;">The Tech Stack</p>
+                <h2 class="section-title-luxury">Cognitive <span class="text-gradient">Infrastructures.</span></h2>
+                <div class="underline-luxury"></div>
             </div>
             <div class="tech-grid">
                 <!-- AI Card -->
-                <div class="tech-card glow-card">
-                    <div class="tech-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8"/><path d="m16 4-4 4"/><path d="m8 4 4 4"/><path d="M12 10V2"/><circle cx="12" cy="12" r="2"/><path d="M12 22v-8"/><path d="m16 20-4-4"/><path d="m8 20 4-4"/><path d="M2 12h8"/><path d="m4 16 4-4"/><path d="m4 8 4 4"/><path d="M22 12h-8"/><path d="m20 16-4-4"/><path d="m20 8 4 4"/></svg>
+                <div class="tech-card luxury-card">
+                    <div class="tech-icon-luxury">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent);"><path d="M12 2v8"/><path d="m16 4-4 4"/><path d="m8 4 4 4"/><path d="M12 10V2"/><circle cx="12" cy="12" r="2"/><path d="M12 22v-8"/><path d="m16 20-4-4"/><path d="m8 20 4-4"/><path d="M2 12h8"/><path d="m4 16 4-4"/><path d="m4 8 4 4"/><path d="M22 12h-8"/><path d="m20 16-4-4"/><path d="m20 8 4 4"/></svg>
                     </div>
-                    <h3>Artificial Intelligence</h3>
-                    <p>Leveraging machine learning to predict consumer behavior and automate high-level decision making with precision.</p>
+                    <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Neural AI</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 2rem;">Deploying predictive synapses that analyze cross-channel consumer touchpoints to forecast intent with surgical precision.</p>
+                    <div class="card-stats" style="display: flex; gap: 1rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent);">
+                        <small>🤖 47 Nodes</small>
+                        <small>⚡ 96% Acc</small>
+                    </div>
                 </div>
                 <!-- Blockchain Card -->
-                <div class="tech-card glow-card">
-                    <div class="tech-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7s0 6 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+                <div class="tech-card luxury-card">
+                    <div class="tech-icon-luxury">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7s0 6 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
                     </div>
-                    <h3>Blockchain</h3>
-                    <p>Ensuring end-to-end transparency in ad-spend and securing customer data through decentralized ledgers.</p>
+                    <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Verified Ledger</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 2rem;">Utilizing decentralized transparency to eliminate attribution fraud and build unshakeable trust via immutable verification.</p>
+                    <div class="card-stats" style="display: flex; gap: 1rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent);">
+                        <small>🔐 2.3M Trans</small>
+                        <small>💾 Immutable</small>
+                    </div>
                 </div>
                 <!-- Data Analytics Card -->
-                <div class="tech-card glow-card">
-                    <div class="tech-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+                <div class="tech-card luxury-card">
+                    <div class="tech-icon-luxury">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent);"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
                     </div>
-                    <h3>Data Analytics</h3>
-                    <p>Transforming complex dataset variables into actionable marketing strategies and real-time performance insights.</p>
-                </div>
-                <!-- Automation Card -->
-                <div class="tech-card glow-card">
-                    <div class="tech-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/></svg>
+                    <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Hyper-Telemetry</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 2rem;">Granular datasets transformed into biological visualizations, enabling stakeholders to pivot strategy in sub-second latency.</p>
+                    <div class="card-stats" style="display: flex; gap: 1rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent);">
+                        <small>📊 50GB Daily</small>
+                        <small>⏱️ Real-time</small>
                     </div>
-                    <h3>Marketing Automation</h3>
-                    <p>Optimizing repetitive operations to ensure consistent brand messaging across all digital touchpoints.</p>
                 </div>
             </div>
         </div>
@@ -129,30 +137,65 @@
     <section id="applications" class="applications section-reveal">
         <div class="container">
             <div class="section-header">
-                <p class="accent-text">Real-World Impact</p>
-                <h2 class="section-title">Practical Applications</h2>
-                <div class="underline"></div>
+                <p class="accent-text-luxury" style="color: var(--accent) !important;">Impact Vectors</p>
+                <h2 class="section-title-luxury">Strategic <span class="text-gradient">Deployments.</span></h2>
+                <div class="underline-luxury"></div>
             </div>
-            <div class="apps-grid">
-                <div class="app-card tilt-element">
-                    <div class="app-icon">🎯</div>
-                    <h3>Personalized Advertising</h3>
-                    <p>Delivering hyper-relevant content to users based on browsing history, predictive patterns, and explicit preferences, maximizing ROI on ad spend.</p>
+            <div class="apps-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+                <div class="app-card luxury-card tilt-element">
+                    <div class="app-icon-luxury">🎯</div>
+                    <h3 style="margin-bottom: 1rem;">Hyper-Personalization</h3>
+                    <p style="color: var(--text-secondary);">Synthesizing unique consumer paths via real-time adaptive content logic.</p>
+                    <div class="card-stats" style="margin-top: 2rem; color: var(--accent); font-size: 0.8rem; text-transform: uppercase;">
+                        <small>📈 89% Conversion Velocity</small>
+                    </div>
                 </div>
-                <div class="app-card tilt-element">
-                    <div class="app-icon">👥</div>
-                    <h3>Customer Segmentation</h3>
-                    <p>Grouping audiences with precision via machine learning clustering to tailor communication, elevate engagement rates, and establish deeper brand loyalty.</p>
+                <div class="app-card luxury-card tilt-element">
+                    <div class="app-icon-luxury">👥</div>
+                    <h3 style="margin-bottom: 1rem;">Neural Segmentation</h3>
+                    <p style="color: var(--text-secondary);">Clustering audiences through multi-dimensional behavioral matrices.</p>
+                    <div class="card-stats" style="margin-top: 2rem; color: var(--accent); font-size: 0.8rem; text-transform: uppercase;">
+                        <small>🎯 Dynamic Micro-Targeting</small>
+                    </div>
                 </div>
-                <div class="app-card tilt-element">
-                    <div class="app-icon">📉</div>
-                    <h3>Predictive Marketing</h3>
-                    <p>Anticipating market trends and forecasting user needs accurately before they emerge by analyzing complex historical data models.</p>
+                <div class="app-card luxury-card tilt-element">
+                    <div class="app-icon-luxury">🤖</div>
+                    <h3 style="margin-bottom: 1rem;">Cognitive Agents</h3>
+                    <p style="color: var(--text-secondary);">LLM-driven concierge assistants specializing in empathetic engagement.</p>
+                    <div class="card-stats" style="margin-top: 2rem; color: var(--accent); font-size: 0.8rem; text-transform: uppercase;">
+                        <small>⚡ Sub-2s Latency Support</small>
+                    </div>
                 </div>
-                <div class="app-card tilt-element">
-                    <div class="app-icon">🤖</div>
-                    <h3>Intelligent Chatbots</h3>
-                    <p>Deploying advanced LLM-powered virtual assistants to provide context-aware, instantaneous support and qualify incoming leads effortlessly 24/7.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery section-reveal">
+        <div class="container">
+            <div class="section-header">
+                <p class="accent-text-luxury" style="color: var(--accent) !important;">Visualization</p>
+                <h2 class="section-title-luxury">System <span class="text-gradient">Artifacts.</span></h2>
+                <div class="underline-luxury"></div>
+            </div>
+            <div class="gallery-container">
+                <div class="gallery-item luxury-card" style="padding: 0; overflow: hidden;">
+                    <img src="assets/3d images/ezgif-frame-001.jpg" alt="AI Interface" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="gallery-overlay" style="position: absolute; bottom: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); width: 100%; padding: 2rem;">
+                        <h4 style="font-family: var(--fancy-sans);">Neural Synthesis</h4>
+                    </div>
+                </div>
+                <div class="gallery-item luxury-card" style="padding: 0; overflow: hidden;">
+                    <img src="assets/3d images/ezgif-frame-048.jpg" alt="Data Streams" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="gallery-overlay" style="position: absolute; bottom: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); width: 100%; padding: 2rem;">
+                        <h4 style="font-family: var(--fancy-sans);">Stream Telemetry</h4>
+                    </div>
+                </div>
+                <div class="gallery-item luxury-card" style="padding: 0; overflow: hidden;">
+                    <img src="assets/3d images/ezgif-frame-096.jpg" alt="Automation" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="gallery-overlay" style="position: absolute; bottom: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); width: 100%; padding: 2rem;">
+                        <h4 style="font-family: var(--fancy-sans);">Auto-Scale Protocol</h4>
+                    </div>
                 </div>
             </div>
         </div>
@@ -161,18 +204,18 @@
     <!-- Future Scope Section -->
     <section id="future" class="future section-reveal">
         <div class="container">
-            <div class="future-container">
+            <div class="future-container luxury-gallery" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;">
                 <div class="future-text">
-                    <p class="accent-text">The Horizon</p>
-                    <h2 class="section-title">Future Scope</h2>
-                    <p>As we advance, the intersection of marketing and technology will become even more seamless. We are moving towards a world where AI is not just a tool but a core teammate in every creative process.</p>
+                    <p class="accent-text-luxury" style="color: var(--accent) !important;">The Horizon</p>
+                    <h2 class="section-title-luxury">System <span class="text-gradient">Evolution.</span></h2>
+                    <p class="luxury-lead">As we advance, the intersection of marketing and technology will become even more seamless. We are moving towards a world where AI is not just a tool but a core teammate.</p>
                 </div>
                 <div class="future-points">
-                    <ul class="clean-list">
-                        <li><span class="dot"></span> Exponential AI Integration</li>
-                        <li><span class="dot"></span> Hyper-Automated Ecosystems</li>
-                        <li><span class="dot"></span> Advanced Ethical Data Privacy</li>
-                        <li><span class="dot"></span> Immersive VR/AR Experiences</li>
+                    <ul class="luxury-list" style="list-style: none; display: flex; flex-direction: column; gap: 2rem;">
+                        <li style="font-family: var(--fancy-sans); font-size: 1.8rem; display: flex; align-items: center; gap: 1rem;"><span class="dot" style="width: 12px; height: 12px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent);"></span> Neural Integration</li>
+                        <li style="font-family: var(--fancy-sans); font-size: 1.8rem; display: flex; align-items: center; gap: 1rem;"><span class="dot" style="width: 12px; height: 12px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent);"></span> Hyper-Automated Ecosystems</li>
+                        <li style="font-family: var(--fancy-sans); font-size: 1.8rem; display: flex; align-items: center; gap: 1rem;"><span class="dot" style="width: 12px; height: 12px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent);"></span> Ethical Data Sovereignty</li>
+                        <li style="font-family: var(--fancy-sans); font-size: 1.8rem; display: flex; align-items: center; gap: 1rem;"><span class="dot" style="width: 12px; height: 12px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent);"></span> Immersive Spatial Commerce</li>
                     </ul>
                 </div>
             </div>
@@ -180,29 +223,29 @@
     </section>
 
     <!-- Contact Section / Footer -->
-    <footer id="contact" class="footer">
-        <div class="container footer-content">
+    <footer id="contact" class="footer" style="background: #020617; border-top: 1px solid var(--glass-border); padding: 100px 0 50px;">
+        <div class="container footer-grid">
             <div class="footer-brand">
-                <a href="#" class="logo">Tech<span>Marketing</span></a>
-                <p>Leading the revolution in modern marketing technology.</p>
+                <a href="#" class="logo-luxury" style="font-size: 2.5rem; margin-bottom: 2rem; display: block;">Tech<span>Marketing</span></a>
+                <p class="luxury-footer-text" style="color: var(--text-secondary); line-height: 1.8; max-width: 400px;">Leading the revolution in modern marketing technology through the lens of luxury and precision engineering.</p>
             </div>
-            <div class="footer-links">
-                <h4>Navigation</h4>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#technologies">Technologies</a></li>
-                    <li><a href="#applications">Applications</a></li>
-                    <li><a href="#future">Future Scope</a></li>
+            <div class="footer-group">
+                <h4 class="footer-label" style="font-family: var(--fancy-sans); margin-bottom: 2rem;">Ecosystem</h4>
+                <ul class="footer-links-luxury" style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+                    <li><a href="#about" style="color: var(--text-secondary); transition: var(--transition-smooth);">Philosophy</a></li>
+                    <li><a href="#technologies" style="color: var(--text-secondary); transition: var(--transition-smooth);">Intelligence</a></li>
+                    <li><a href="#applications" style="color: var(--text-secondary); transition: var(--transition-smooth);">Impact</a></li>
+                    <li><a href="settings.html" style="color: var(--text-secondary); transition: var(--transition-smooth);">Settings</a></li>
                 </ul>
             </div>
-            <div class="footer-contact">
-                <h4>Connect</h4>
-                <p>Email: info@techmarketing.com</p>
-                <p>Location: Innovation Hub, Tech City</p>
+            <div class="footer-group">
+                <h4 class="footer-label" style="font-family: var(--fancy-sans); margin-bottom: 2rem;">Synthesize</h4>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">Link: concierge@techmarketing.io</p>
+                <p style="color: var(--text-secondary);">Studio: Hyperion Hub, Digital Nexus</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Technology-Driven Marketing Approaches. All Rights Reserved.</p>
+        <div class="footer-bottom-luxury" style="text-align: center; margin-top: 5rem; padding-top: 3rem; border-top: 1px solid var(--glass-border); color: var(--text-secondary); font-size: 0.9rem;">
+            <p>&copy; 2026 TechMarketing Ecosystem. All Rights Reserved. Engineered with Precision.</p>
         </div>
     </footer>
 
@@ -217,27 +260,30 @@
             }
         });
 
-        // Typing Effect
+        // Typing Effect - Only run if element exists
         const typingText = document.getElementById('typing-text');
-        const textToType = "Transforming Business Through Innovation and Data";
-        let index = 0;
+        if (typingText) {
+            const textToType = "Transforming Business Through Innovation and Data";
+            let index = 0;
 
-        function type() {
-            if (index < textToType.length) {
-                typingText.textContent += textToType.charAt(index);
-                index++;
-                setTimeout(type, 50);
+            function type() {
+                if (index < textToType.length) {
+                    typingText.textContent += textToType.charAt(index);
+                    index++;
+                    setTimeout(type, 50);
+                }
             }
+
+            // Trigger typing after a short delay
+            window.addEventListener('DOMContentLoaded', () => {
+                setTimeout(type, 1000);
+            });
         }
 
-        // Trigger typing after a short delay
-        window.addEventListener('DOMContentLoaded', () => {
-            setTimeout(type, 1000);
-        });
-
-        // Subtle Particle Background
+        // Subtle Particle Background - Only run if canvas exists
         const canvas = document.getElementById('hero-particles');
-        const ctx = canvas.getContext('2d');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
         let particles = [];
 
         function initParticles() {
@@ -278,6 +324,7 @@
         window.addEventListener('resize', initParticles);
         initParticles();
         animateParticles();
+        }
 
         // Scroll Reveal Animation (Intersection Observer)
         const observerOptions = {
@@ -313,38 +360,406 @@
             });
         });
 
-        // 3D Tilt Effect for Cards
-        const tiltElements = document.querySelectorAll('.tilt-element, .tech-card');
-        tiltElements.forEach(el => {
-            el.addEventListener('mousemove', e => {
-                const rect = el.getBoundingClientRect();
-                const x = e.clientX - rect.left; // x position within the element.
-                const y = e.clientY - rect.top;  // y position within the element.
+        // GSAP Registration
+        gsap.registerPlugin(ScrollTrigger);
+
+        const canvasHero = document.getElementById("hero-scrub-canvas");
+        const context = canvasHero.getContext("2d");
+
+        // Set initial canvas size
+        canvasHero.width = window.innerWidth;
+        canvasHero.height = window.innerHeight;
+
+        const frameCount = 192;
+        // Use encoded URI path to handle spaces in folder names reliably
+        const currentFrame = index => {
+            const frameNum = (index + 1).toString().padStart(3, '0');
+            return `assets/3d%20images/ezgif-frame-${frameNum}.jpg`;
+        };
+
+        const images = [];
+        const scrollState = {
+            frame: 0,
+            isReady: false
+        };
+
+        // Preload Images with better error handling
+        let imagesLoaded = 0;
+        const imagePromises = [];
+
+        for (let i = 0; i < frameCount; i++) {
+            const promise = new Promise((resolve, reject) => {
+                const img = new Image();
+                img.crossOrigin = "anonymous";
+                
+                img.onload = () => {
+                    imagesLoaded++;
+                    console.log(`Image loaded: ${i + 1}/${frameCount}`);
+                    if (imagesLoaded === frameCount) {
+                        scrollState.isReady = true;
+                        console.log("All images loaded! Scroll animation ready.");
+                        render(); // Render first frame
+                    }
+                    resolve(img);
+                };
+                
+                img.onerror = () => {
+                    console.error(`Failed to load image ${i}: ${currentFrame(i)}`);
+                    reject(`Image load error at index ${i}`);
+                };
+                
+                img.src = currentFrame(i);
+            });
+            
+            images.push(promise);
+            imagePromises.push(promise);
+        }
+
+        // Wait for all images to load
+        Promise.all(imagePromises).then((loadedImages) => {
+            images.length = 0;
+            images.push(...loadedImages);
+            console.log("Image sequence ready for animation!");
+        }).catch(err => {
+            console.error("Image loading failed:", err);
+        });
+
+        // GSAP ScrollTrigger timeline
+        gsap.to(scrollState, {
+            frame: frameCount - 1,
+            snap: "frame",
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".scroll-hero",
+                start: "top top",
+                end: "+=400%",
+                scrub: 0.5,
+                pin: true,
+                onUpdate: render,
+                onEnter: () => {
+                    console.log("Scroll animation triggered!");
+                }
+            }
+        });
+
+        function render() {
+            if (images[scrollState.frame] && images[scrollState.frame].width) {
+                const img = images[scrollState.frame];
+                context.clearRect(0, 0, canvasHero.width, canvasHero.height);
+                
+                // Center the image (cover style)
+                const scale = Math.max(canvasHero.width / img.width, canvasHero.height / img.height);
+                const x = (canvasHero.width / 2) - (img.width / 2) * scale;
+                const y = (canvasHero.height / 2) - (img.height / 2) * scale;
+                
+                context.drawImage(img, x, y, img.width * scale, img.height * scale);
+            }
+        }
+
+        // Resize handler
+        window.addEventListener('resize', () => {
+            canvasHero.width = window.innerWidth;
+            canvasHero.height = window.innerHeight;
+            render();
+        });
+
+        // Use clean, beginner-friendly code with comments, avoid overly complex logic
+
+        // ===== COMPREHENSIVE SCROLL ANIMATIONS WITH GSAP =====
+
+        // 1. TECH CARDS - Staggered Scroll Animation
+        const techCards = document.querySelectorAll('.tech-card');
+        techCards.forEach((card, index) => {
+            gsap.to(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 85%",
+                    end: "top 30%",
+                    toggleActions: "play none none reverse"
+                },
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                delay: index * 0.15
+            });
+        });
+
+        // 2. APP CARDS - Scale & Rotate on Scroll
+        const appCards = document.querySelectorAll('.app-card');
+        appCards.forEach((card, index) => {
+            gsap.to(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 80%",
+                    end: "top 20%",
+                    scrub: true,
+                    markers: false
+                },
+                opacity: 1,
+                scale: 1,
+                y: 0,
+                rotationY: 0,
+                duration: 0.8,
+                delay: index * 0.1
+            });
+        });
+
+        // 3. GALLERY ITEMS - Perspective Reveal
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        galleryItems.forEach((item, index) => {
+            gsap.to(item, {
+                scrollTrigger: {
+                    trigger: item,
+                    start: "top 80%",
+                    toggleActions: "play none none reverse"
+                },
+                opacity: 1,
+                scale: 1,
+                rotationY: 0,
+                duration: 0.9,
+                delay: index * 0.12,
+                ease: "back.out"
+            });
+        });
+
+        // 4. SECTION HEADERS - Blur Reveal Effect
+        document.querySelectorAll('.section-header').forEach((header, index) => {
+            gsap.to(header, {
+                scrollTrigger: {
+                    trigger: header,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                },
+                opacity: 1,
+                filter: "blur(0px)",
+                duration: 0.8,
+                ease: "power2.out"
+            });
+
+            // Underline animation
+            const underline = header.querySelector('.underline-luxury');
+            if (underline) {
+                gsap.fromTo(underline, 
+                    { scaleX: 0 },
+                    {
+                        scrollTrigger: {
+                            trigger: header,
+                            start: "top 85%",
+                            toggleActions: "play none none reverse"
+                        },
+                        scaleX: 1,
+                        duration: 0.8,
+                        delay: 0.3,
+                        transformOrigin: "center"
+                    }
+                );
+            }
+        });
+
+        // 5. LUXURY CARDS - Hover Lift Effect with Parallax
+        const luxuryCards = document.querySelectorAll('.luxury-card');
+        luxuryCards.forEach(card => {
+            // Parallax on scroll
+            gsap.to(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 80%",
+                    end: "bottom 20%",
+                    scrub: 1,
+                    markers: false
+                },
+                y: -30,
+                opacity: 1
+            });
+
+            // Mouse move parallax
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
                 
                 const centerX = rect.width / 2;
                 const centerY = rect.height / 2;
                 
-                // Calculate rotation (max 15 deg)
-                const rotateX = ((y - centerY) / centerY) * -15;
-                const rotateY = ((x - centerX) / centerX) * 15;
+                const rotateX = (y - centerY) * 0.1;
+                const rotateY = (centerX - x) * 0.1;
                 
-                el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-                
-                // Update glow effect position if present
-                const techIcon = el.querySelector('.tech-icon, .app-icon');
-                if(techIcon) {
-                    techIcon.style.transform = 'translateZ(30px)';
+                gsap.to(card, {
+                    rotationX: rotateX,
+                    rotationY: rotateY,
+                    duration: 0.6
+                });
+            });
+
+            card.addEventListener('mouseleave', () => {
+                gsap.to(card, {
+                    rotationX: 0,
+                    rotationY: 0,
+                    duration: 0.6
+                });
+            });
+        });
+
+        // 6. FUTURE SECTION - Timeline Animation
+        const futureSection = document.querySelector('.future-container');
+        if (futureSection) {
+            const futureText = futureSection.querySelector('.future-text');
+            const futurePoints = futureSection.querySelector('.future-points');
+            
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: futureSection,
+                    start: "top 60%",
+                    toggleActions: "play none none reverse"
                 }
             });
-            
-            el.addEventListener('mouseleave', () => {
-                el.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
-                const techIcon = el.querySelector('.tech-icon, .app-icon');
-                if(techIcon) {
-                    techIcon.style.transform = 'translateZ(0px)';
+
+            tl.to(futureText, { opacity: 1, x: 0, duration: 0.8 }, 0)
+              .to(futurePoints, { opacity: 1, x: 0, duration: 0.8 }, 0.2)
+              .to(futurePoints.querySelectorAll('li'), { 
+                  opacity: 1, 
+                  x: 0, 
+                  duration: 0.6 
+              }, 0.3);
+        }
+
+        // 7. HERO TITLE - Gradient Animation Enhancement
+        const heroTitle = document.querySelector('.hero-title');
+        if (heroTitle) {
+            gsap.to(heroTitle, {
+                scrollTrigger: {
+                    trigger: ".scroll-hero",
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: true,
+                    markers: false
+                },
+                backgroundPosition: "200% 0%",
+                duration: 1
+            });
+        }
+
+        // 8. STATS COUNTER - Animated Numbers
+        const statsCounters = document.querySelectorAll('.luxury-stat-number');
+        statsCounters.forEach(counter => {
+            const finalValue = parseInt(counter.textContent);
+            let isAnimated = false;
+
+            ScrollTrigger.create({
+                trigger: counter,
+                start: "top 80%",
+                onEnter: () => {
+                    if (!isAnimated) {
+                        gsap.to({ value: 0 }, {
+                            value: finalValue,
+                            duration: 2,
+                            onUpdate: function() {
+                                counter.textContent = Math.floor(this.targets()[0].value) + (counter.textContent.includes('%') ? '%' : 'x');
+                            }
+                        });
+                        isAnimated = true;
+                    }
                 }
             });
         });
+
+        // 9. SMOOTH SCROLL INDICATORS - Parallax Text
+        const textRevealElements = document.querySelectorAll('.luxury-lead');
+        textRevealElements.forEach(el => {
+            gsap.to(el, {
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 80%",
+                    end: "top 20%",
+                    scrub: 0.5,
+                    markers: false
+                },
+                opacity: 1,
+                y: 0,
+                duration: 0.8
+            });
+        });
+
+        // 10. SECTION REVEALS - Enhanced Observer
+        const advancedObserverOptions = {
+            threshold: [0.1, 0.5],
+            rootMargin: "-50px"
+        };
+
+        const advancedObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    
+                    // Stagger children animations
+                    const children = entry.target.querySelectorAll('.tech-card, .app-card, .gallery-item');
+                    children.forEach((child, index) => {
+                        gsap.to(child, {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.6,
+                            delay: index * 0.1
+                        });
+                    });
+                }
+            });
+        }, advancedObserverOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            advancedObserver.observe(section);
+        });
+
+        // 11. BUTTON RIPPLE EFFECT on Click
+        document.querySelectorAll('.btn-click').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+
+                ripple.style.cssText = `
+                    position: absolute;
+                    width: ${size}px;
+                    height: ${size}px;
+                    background: rgba(255, 255, 255, 0.5);
+                    border-radius: 50%;
+                    left: ${x}px;
+                    top: ${y}px;
+                    pointer-events: none;
+                `;
+
+                this.style.position = 'relative';
+                this.style.overflow = 'hidden';
+                this.appendChild(ripple);
+
+                gsap.to(ripple, {
+                    scale: 4,
+                    opacity: 0,
+                    duration: 0.6,
+                    onComplete: () => ripple.remove()
+                });
+            });
+        });
+
+        // 12. NAVBAR LINK ANIMATION
+        document.querySelectorAll('.nav-link-anime').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                gsap.to(this, {
+                    color: "var(--accent)",
+                    duration: 0.3
+                });
+            });
+
+            link.addEventListener('mouseleave', function() {
+                gsap.to(this, {
+                    color: "var(--text-light)",
+                    duration: 0.3
+                });
+            });
+        });
+
     </script>
 </body>
 </html>

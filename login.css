@@ -36,19 +36,23 @@ body {
 }
 
 .glass-panel {
-    background: rgba(17, 34, 64, 0.6);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(100, 255, 218, 0.1);
-    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5);
-    border-radius: 16px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+    border-radius: 32px;
 }
 
 .login-card {
     width: 100%;
-    max-width: 420px;
-    padding: 3rem 2.5rem;
-    transition: transform 0.1s ease-out; /* For JS tilt */
+    max-width: 450px;
+    padding: 4rem 3rem;
+    transition: var(--transition-smooth);
+}
+
+.premium-bg {
+    background: radial-gradient(circle at top left, #0f172a 0%, #020617 100%);
 }
 
 .login-header {

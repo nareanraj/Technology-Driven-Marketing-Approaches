@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - TechMarketing</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <meta name="description" content="Join the TechMarketing ecosystem and unlock precision tools.">
+    <title>Join the Network - TechMarketing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="register.css">
 </head>
-<body>
+<body class="premium-bg">
     <!-- Navbar (simplified for register) -->
-    <nav class="navbar" style="background-color: transparent; box-shadow: none;">
+    <nav class="navbar" style="background-color: transparent; border: none;">
         <div class="container">
             <a href="index.html" class="logo">Tech<span>Marketing</span></a>
             <ul class="nav-links">
@@ -23,32 +24,34 @@
         <div id="register-particles"></div>
         <div class="register-card glass-panel tilt-element">
             <div class="register-header">
-                <h2>Create Account</h2>
-                <p>Join TechMarketing and unlock powerful marketing tools.</p>
+                <p class="accent-text-luxury" style="color: var(--accent) !important; text-align: center; margin-bottom: 0.5rem;">Join the Revolution</p>
+                <h2 class="text-gradient">Initialize Profile</h2>
+                <p>Register your presence within the marketing intelligence ecosystem.</p>
             </div>
             
             <form id="register-form">
+                <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="input-group">
+                        <input type="text" id="fname" required placeholder=" ">
+                        <label for="fname">First Identity</label>
+                        <div class="input-glow"></div>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="lname" required placeholder=" ">
+                        <label for="lname">Last Identity</label>
+                        <div class="input-glow"></div>
+                    </div>
+                </div>
+                
                 <div class="input-group">
-                    <input type="text" id="name" required>
-                    <label for="name">Full Name</label>
+                    <input type="email" id="email" required autocomplete="off" placeholder=" ">
+                    <label for="email">Communication Link (Email)</label>
                     <div class="input-glow"></div>
                 </div>
                 
                 <div class="input-group">
-                    <input type="email" id="email" required autocomplete="off">
-                    <label for="email">Email Address</label>
-                    <div class="input-glow"></div>
-                </div>
-                
-                <div class="input-group">
-                    <input type="password" id="password" required minlength="6">
-                    <label for="password">Password</label>
-                    <div class="input-glow"></div>
-                </div>
-
-                <div class="input-group">
-                    <input type="password" id="confirm-password" required>
-                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="password" required minlength="8" placeholder=" ">
+                    <label for="password">Create Auth Key</label>
                     <div class="input-glow"></div>
                 </div>
 
@@ -56,40 +59,34 @@
                     <label class="terms-checkbox">
                         <input type="checkbox" required>
                         <span class="checkmark"></span>
-                        I agree to the Terms of Service & Privacy Policy
+                        I accept the Protocols & Ethos of the network
                     </label>
                 </div>
 
-                <button type="submit" class="btn btn-premium btn-register btn-click">Create Account</button>
+                <button type="submit" class="btn btn-primary btn-register btn-click">Synchronize Identity</button>
             </form>
             
             <div class="register-footer">
-                <p>Already have an account? <a href="login.html">Log In</a></p>
+                <p>Already Synthesized? <a href="login.html" class="text-gradient">Access Portal</a></p>
             </div>
         </div>
-    </div>
-
-    <!-- Background Shapes -->
-    <div class="abstract-shape">
-        <div class="circle circle-1" style="width: 500px; height: 500px; top: -100px; right: -100px;"></div>
-        <div class="circle circle-2" style="width: 400px; height: 400px; bottom: -50px; left: -50px; background: rgba(100, 255, 218, 0.05);"></div>
     </div>
 
     <script>
         // Simple Particle Background for Register
         const particleContainer = document.getElementById('register-particles');
-        for (let i = 0; i < 30; i++) {
+        for (let i = 0; i < 40; i++) {
             let p = document.createElement('div');
             p.classList.add('particle');
             p.style.left = Math.random() * 100 + '%';
             p.style.top = Math.random() * 100 + '%';
-            p.style.setProperty('--tx', (Math.random() - 0.5) * 200 + 'px');
-            p.style.setProperty('--ty', (Math.random() - 0.5) * 200 + 'px');
-            p.style.animationDelay = Math.random() * 5 + 's';
+            p.style.setProperty('--tx', (Math.random() - 0.5) * 300 + 'px');
+            p.style.setProperty('--ty', (Math.random() - 0.5) * 300 + 'px');
+            p.style.animationDelay = Math.random() * 8 + 's';
             particleContainer.appendChild(p);
         }
 
-        // Vanilla Tilt Effect
+        // Vanilla Tilt Enhanced
         const card = document.querySelector('.register-card');
         card.addEventListener('mousemove', e => {
             const rect = card.getBoundingClientRect();
@@ -97,28 +94,22 @@
             const y = e.clientY - rect.top;
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            const rotateX = ((y - centerY) / centerY) * -5;
-            const rotateY = ((x - centerX) / centerX) * 5;
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            const rotateX = ((y - centerY) / centerY) * -6;
+            const rotateY = ((x - centerX) / centerX) * 6;
+            card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         });
         card.addEventListener('mouseleave', () => {
-            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
+            card.style.transform = `perspective(1200px) rotateX(0deg) rotateY(0deg)`;
         });
 
-        // Form Submit (mock validation and redirect)
+        // Form Submit
         document.getElementById('register-form').addEventListener('submit', (e) => {
             e.preventDefault();
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirm-password').value;
-            if (password !== confirmPassword) {
-                alert('Passwords do not match!');
-                return;
-            }
             const btn = document.querySelector('.btn-register');
-            btn.textContent = 'Creating Account...';
+            btn.textContent = "Synthesizing Bio-ID...";
             setTimeout(() => {
-                window.location.href = 'settings.html'; // Mock redirect to dashboard
-            }, 1500);
+                window.location.href = 'settings.html';
+            }, 1200);
         });
     </script>
 </body>
