@@ -12,6 +12,7 @@
     --text-primary: #f8fafc;
     --text-secondary: #94a3b8;
     --text-heading: #ffffff;
+    --text-light: #ffffff;
     --luxury-serif: 'Cormorant Garamond', serif;
     --modern-sans: 'Inter', sans-serif;
     --fancy-sans: 'Syne', sans-serif;
@@ -146,13 +147,42 @@ ul {
     align-items: center;
     z-index: 1000;
     transition: var(--transition);
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.95));
+    backdrop-filter: blur(10px);
 }
 
 .navbar.scrolled {
     height: 75px;
-    background-color: rgba(10, 25, 47, 0.6);
-    backdrop-filter: blur(15px); /* Glassmorphism from reference */
+    background-color: rgba(10, 25, 47, 0.9);
+    backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.page-white-bg .navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+}
+
+body.page-white-bg .navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.98);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.15);
+}
+
+body.page-white-bg .nav-links a {
+    color: #0f172a;
+}
+
+body.page-white-bg .nav-links a:hover {
+    color: var(--accent);
+}
+
+body.page-white-bg .logo {
+    color: #0f172a;
+}
+
+body.page-white-bg .btn-nav {
+    color: #0f172a;
 }
 
 .navbar .container {
@@ -172,9 +202,14 @@ ul {
     color: var(--accent);
 }
 
+body.page-white-bg .logo {
+    color: #0f172a;
+}
+
 .nav-links {
     display: flex;
     align-items: center;
+    gap: 1rem;
 }
 
 .nav-links li {
@@ -216,6 +251,26 @@ ul {
 
 .btn-nav:hover {
     background-color: rgba(100, 255, 218, 0.1);
+}
+
+body.page-white-bg .navbar .nav-links a,
+body.page-white-bg .navbar .nav-links a:visited {
+    color: #0f172a !important;
+}
+
+body.page-white-bg .navbar .nav-links a:hover {
+    color: var(--accent) !important;
+}
+
+body.page-white-bg .btn-nav {
+    border-color: rgba(15, 23, 42, 0.25);
+    color: #0f172a !important;
+    background: rgba(255, 255, 255, 0.95);
+}
+
+body.page-white-bg .btn-nav:hover {
+    background-color: rgba(15, 23, 42, 0.08);
+    color: #0f172a !important;
 }
 
 /* Scroll-Scrub Hero Section */
